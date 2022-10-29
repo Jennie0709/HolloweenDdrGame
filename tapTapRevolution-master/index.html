@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5.serialserver@latest/lib/p5.serialport.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <title>Tap Tap Revolution</title>
+
+  </head>
+  <body>
+    <!-- <script src="sketch.js"></script> -->
+
+    <span id="modalOverlay">
+      <div id="startGameModal" class="modalMessage">
+        <h3>Halloween DDR</h3>
+        <p>See how many ghosts you can kill. The more you kill, the more score you get.</p>
+        <!-- <p>Use the direction keys to play. You can also pause/resume, restart, and mute/unmute the music by clicking the icons to the right of the canvas.</p> -->
+        <button id="redirectButton">Let's Go</button>
+      </div>
+      <div id="endGameModal" class="modalMessage">
+        <h3>Thanks for playing!</h3>
+        <button id="playAgainButton">Play Again</button>
+      </div>
+    </span>
+
+    <div class="title">Halloween DDR</div>
+    <section class="canvasArea">
+      <!-- <div class="links">
+        <a href="https://github.com/Eractus"><img src="./assets/github.png"></a>
+        <a href="https://www.linkedin.com/in/danny-peng-29515651/"><img src="./assets/linkedin.png"></a>
+      </div> -->
+      <div class="controls">
+        <img id="muteIcon" src="./assets/sound.png">
+        <img id="pauseIcon" src="./assets/pause.png">
+        <img id="restartIcon" src="./assets/restart.png">
+      </div>
+      <div id="score">Score: 0</div>
+      <div class="combo">
+        <p id="comboCount"></p>
+        <span id="comboText">combo</span>
+      </div>
+      <canvas id="ttrCanvas" width="450" height="680"></canvas>
+    </section>
+
+    <div id="directions">
+      <h4>How To Play</h4>
+      <ul>
+        <li>Play with stapping on the corresponding footpads while ghosts move to the finish line.</li>
+      </ul>
+      <button id="playButton">Start</button>
+    </div>
+
+    <div class="arrowImages">
+      <img id="left" src="./assets/staticLeft.png">
+      <img id="down" src="./assets/staticDown.png">
+      <img id="up" src="./assets/staticUp.png">
+      <img id="right" src="./assets/staticRight.png">
+    </div>
+
+    <audio id="mainSong" src="./assets/captainJack.mp3"></audio>
+    <audio id="endApplause" src="./assets/applause.mp3"></audio>
+  </body>
+  <script src="./js/arrowSprites.js" type="text/javascript"></script>
+  <script src="./js/script.js" type="text/javascript"></script>
+</html>

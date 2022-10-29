@@ -1,0 +1,339 @@
+:root {
+  --font-family1: 'Arial Black';
+  --font-family2: 'Arial';
+  --white: #ffffff;
+  --orange: #ff7e28;
+  --orange-gray: #ff5e00;
+  --light-gray: #b2b2b2;
+  --dark-gray: #7f7f7f;
+  --black: #000000;
+  --yellow: #ffff88;
+  --neon-yellow: #e5ff00;
+  --pink: #FF69B4;
+}
+
+body {
+  background-image: url("../assets/Background.jpg");
+  background-size: cover;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-family: var(--font-family1);
+  margin-top: 0;
+}
+
+h4 {
+  font-family: var(--font-family1);
+  margin: 0;
+}
+
+section {
+  position: relative;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  color: var(--orange);
+  font-family: var(--font-family1);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid var(--orange); */
+  border-radius: 1000px;
+  padding: 16px 32px;
+  margin-top: 5%;
+  margin-bottom: 24px;
+}
+
+button:hover {
+  background-color: var(--white);
+}
+
+button:active {
+  background-color: var(--white);
+}
+
+#modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+}
+
+#score {
+  color: var(--yellow);
+  font-family: var(--font-family1);
+  font-size: 28px;
+  padding-top: 5%;;
+}
+
+#startGameModal {
+  display: flex;
+}
+
+#endGameModal {
+  display: none;
+}
+
+.modalMessage {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--font-family2);
+  font-size: 18px;
+  width: 50%;
+  padding: 5% 3%;
+  border: 1px solid var(--white);
+  border-radius: 40px;
+  background-color: var(--black);
+  opacity: 1;
+  z-index: 10;
+}
+
+.modalMessage > h3 {
+  font-size: 28px;
+  font-family: var(--font-family1);
+  color: var(--neon-yellow);
+}
+
+.links {
+  position: absolute;
+  top: 50px;
+  left: -90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.links img {
+  width: 40px;
+  height: 40px;
+}
+
+.controls {
+  position: absolute;
+  top: 15px;
+  right: -75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls img {
+  border-radius: 50%;
+  background-color: var(--white);
+  width: 25px;
+  height: 25px;
+  margin: 5px 0;
+  /* border: 1px solid var(--white); */
+  cursor: pointer;
+}
+
+.combo {
+  font-family: var(--font-family1);
+  font-size: 35px;
+  position: absolute;
+  left: -110px;
+  top: 200px;
+  color: var(--yellow);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.combo p {
+  margin: 0;
+}
+
+.combo span {
+  font-size: 20px;
+  margin-left: 5px;
+  color: var(--orange);
+  visibility: hidden;
+}
+
+.title {
+  display: none;
+  font-family: var(--font-family1);
+}
+
+#directions {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  position: fixed;
+  top: calc(50vh - 180px);
+  left: calc(50vw - 150px);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 30px;
+  padding: 20px;
+  margin-right: 24px;
+}
+
+#directions h4 {
+  font-size: 18px;
+  font-family: var(--font-family1);
+  font-weight: 300;
+  text-align: center;
+  padding-top: 5%;
+
+  /* border-bottom: 3px solid var(--white); */
+}
+
+#directions ul {
+  font-family: var(--font-family2);
+  padding-inline-start: 0;
+  flex-wrap: wrap;
+  display: flex;
+  color: var(--white);
+  list-style-type: none;
+}
+
+#directions li {
+  font-family: var(--font-family2);
+  font-size: 15px;
+  padding: 10px;
+}
+
+#directions li::before {
+  font-family: var(--font-family2);
+  content: "\25B7";
+  color: var(--neon-yellow);
+  margin-right: 10px;
+}
+
+.arrowImages {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .combo {
+    font-size: 45px;
+    left: -75px;
+  }
+
+  .combo span {
+    font-size: 25px;
+  }
+
+  .controls {
+    right: -30px;
+  }
+
+  .modalMessage {
+    width: 50%;
+    font-size: 23px;
+  }
+
+  .modalMessage > h3 {
+    font-size: 33px;
+  }
+
+  .links {
+    left: -40px;
+  }
+
+  .title {
+    font-family: var(--font-family1);
+    width: 20vw;
+    font-size: 20px;
+    word-wrap: break-word;
+    color: var(--neon-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #directions {
+    display: flex;
+    width: 20vw;
+    margin-left: 3%;
+    position: static;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .controls {
+    right: 0;
+  }
+
+  .links {
+    left: 0;
+  }
+
+  .title {
+    width: 30vw;
+    font-size: 30px;
+  }
+
+  #directions {
+    width: 30vw;
+  }
+
+  #directions h4 {
+    font-size: 24px;
+  }
+
+  #directions li {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .combo {
+    font-size: 55px;
+  }
+
+  .combo span {
+    font-size: 30px;
+  }
+
+  .controls {
+    right: 25px;
+  }
+
+  .modalMessage {
+    font-size: 28px;
+  }
+
+  .modalMessage > h3 {
+    font-size: 38px;
+  }
+
+  .links {
+    left: 25px;
+  }
+
+  .title {
+    font-size: 45px;
+  }
+
+  #directions h4 {
+    font-size: 28px;
+  }
+
+  .directions li {
+    font-size: 20px;
+  }
+}
